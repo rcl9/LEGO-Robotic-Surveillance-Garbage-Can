@@ -1,0 +1,78 @@
+// --------------------------------------------------------------------------------
+//
+//                           Robotic "Surveillance Garbage Can" 
+//
+//                                                May 11 2009
+//
+//                                  (Rob's Retro Computing Archive) 
+//                               RetroComputingArchive@gmail.com
+//                                                  github.com/rcl9
+//
+// --------------------------------------------------------------------------------
+
+#define Nc_RED_BUTTON_PORT    13
+#define Nc_DOWN_SWITCH        14
+#define Nc_UP_SWITCH          15
+
+#define Nc_LEFT_LIGHT_DETECTOR 2  // Bright = 10, dark = 250
+#define Nc_RIGHT_LIGHT_DETECTOR 3 // Bright = 10, dark = 250
+
+#define Nc_LONGITUDINAL_MOTOR 3
+#define Nc_LATITUDINAL_MOTOR  2
+
+void main()
+{
+    int sonar_is_on = 1;
+    
+    printf( "The Surveillance Garbage Can\n" );
+    beep(); beep();
+      
+    while (!stop_button() ) {
+        int left_light_intensity, right_light_intensity, difference;
+        
+        // Allow the red button to enable or disable sonar
+        if (digital( Nc_RED_BUTTON_PORT ) ) {
+            sonar_is_on = !sonar_is_on;
+            msleep (1000L); // Switch de-bounce
+        }   
+                
+        // If the user is pressing the up/down switch, then rotate the garbage can flap
+        while ( digital( Nc_UP_SWITCH ) ) {
+            fd( Nc_LATITUDINAL_MOTOR );
+        }
+        while ( digital( Nc_DOWN_SWITCH ) ) {
+            bk( Nc_LATITUDINAL_MOTOR );
+        }       
+        off ( Nc_LATITUDINAL_MOTOR );
+        
+        // Read the current intensities of the 2 light sensors
+        left_light_intensity = analog(2);
+        right_light_intensity = analog(3);
+        
+        //printf( "Right = %d, left = %d\n",  right_light_intensity, left_light_intensity );
+        
+        // Find the difference in their intensities
+        difference = left_light_intensity - right_light_intensity;
+        
+        if ( difference > 20 || difference < -20 ) {
+            if ( right_light_intensity > left_light_intensity ) {
+                fd ( Nc_LONGITUDINAL_MOTOR );
+                msleep( 250L );
+                off ( Nc_LONGITUDINAL_MOTOR );
+            } else {
+                bk ( Nc_LONGITUDINAL_MOTOR );
+                msleep( 250L );
+                off ( Nc_LONGITUDINAL_MOTOR );
+            }
+        }
+        
+        // Let's check the sonar sensor. Need to wait 0.03 seconds between each call
+        if ( sonar_is_on && ( sonar() > 600 && sonar() < 700 ) ) {   // The argument is the distance from the sonar
+            tone ( 1000.0, 0.2 );
+        }     
+    }
+        
+    // Turn off our motors
+    off ( Nc_LONGITUDINAL_MOTOR );
+    off ( Nc_LATITUDINAL_MOTOR );
+}
