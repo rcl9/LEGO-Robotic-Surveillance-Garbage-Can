@@ -4,7 +4,7 @@ This repo documents the evolution and development of a flip-up 'Surveillance Gar
 While this does not fall into my "1970s and 1980s retro-computing" camp it is getting there in terms of its age and antiquity given its 2000-era HandyBoard SBC.
 
 <div style="text-align:center">
-<img src="/Images/IMG_5064.JPG" alt="" style="width:40%; height:auto;">    
+<img src="/Images/IMG_5064.JPG" alt="" style="width:50%; height:auto;">    
 </div>
 
 ## The Premise for the Build
