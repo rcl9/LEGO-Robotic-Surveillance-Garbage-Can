@@ -30,7 +30,7 @@ The names which were considered for the project were:
 
 ## Operation of the Surveillance Garbage Can
 
-The can was rotated via a LEGO Technic controlled geared-down motor (internal to the can) that turned a rubber-tire wheel outside of the can:
+The can was rotated via a LEGO Technic controlled geared-down motor (internal to the can) that turned a rubber-tire wheel outside of the can, of which the can itself was glued to a Lazy-Susan rotation platform:
 
 <div style="text-align:center">
 <img src="/Images/IMG_4995.JPG" alt="" style="width:75%; height:auto;">
@@ -66,7 +66,7 @@ And the HandyBoard SBC was mounted on a metal platform inside of the can and abo
 <img src="/Images/IMG_5055.JPG" alt="" style="width:75%; height:auto;">
 </div>
 
-Everything was controlled by the 6811-based HandyBoard SBC and its associated [simple controller program](/Src/Robotic_Surveillance_Garbage_Can_Controller.ic) written in '[KISS Interactive C](https://en.wikipedia.org/wiki/Interactive_C)' (IC4). The HandyBoard was programmed so that the light sensors would rotate the can around in a circle while the sonar device would be used to “beep” at people if they came too close. The switch determined if the can's top was in the opened or closed position.
+Everything was controlled by the 6811-based HandyBoard SBC and its associated [simple controller program](/Src/Robotic_Surveillance_Garbage_Can_Controller.ic) written in '[KISS Interactive C](https://en.wikipedia.org/wiki/Interactive_C)' (IC4). The HandyBoard was initially programmed so that the light sensors would rotate the can around in a circle while the sonar device would be used to “beep” at people if they came too close. The switch determined if the can's top was in the opened or closed position.
 
 <div style="text-align:center">
 <img src="/Images/IMG_5064.JPG" alt="" style="width:75%; height:auto;">
