@@ -1,17 +1,17 @@
 # The Robotic 'Surveillance Garbage Can' using a HandyBoard SBC - From 2009
 
-This repo documents the evolution and development of a flip-up 'Surveillance Garbage Can'  robot based on a 6811 [HandyBoard SBC](http://handyboard.com) or this [link](https://www.cs.uml.edu/~fredm/handyboard.com/hb.html) and various LEGO Technic motors and related pieces. 
+This repo documents the evolution and development of a flip-up 'Surveillance Garbage Can'  based on a 6811 [HandyBoard SBC](http://handyboard.com) (or this [link](https://www.cs.uml.edu/~fredm/handyboard.com/hb.html)) and various LEGO Technic motors and related pieces. 
 While this does not fall into my "1970s and 1980s retro-computing" camp it is getting there in terms of its age and antiquity given its 2000-era HandyBoard SBC.
 
 <div style="text-align:center">
-<img src="/Images/IMG_5064.JPG" alt="" style="width:auto; height:75%;">
+<img src="/Images/IMG_5064.JPG" alt="" style="width:40%; height:auto;">    
 </div>
 
 ## The Premise for the Build
 
 The whimsical premise behind this project was to create a normal looking garbage can which would transform into one of the world’s "best security systems" by night. The idea was that that sonar and dual light sensors would rotate up from inside of the can and adaptively track an intruder's movement via rotating both the base of the can and its flip-up top. When an intruder was located then the Surveillance Garbage would  emit a “beep” from its computer controlled piezoelectric speaker, and track the location of the intruder using both ultra-sound and light sensing. 
 
-The ultimate goal was to transform an ordinary $8 flip-top garbage can into a fully automated, robotic surveillance tracking device.
+The ultimate goal was to transform an ordinary $8 flip-top garbage can into a fully automated, robotic surveillance tracking device:
 
 <div style="text-align:center">
 <img src="/Images/IMG_4867.JPG" alt="" style="width:40%; height:auto;">    
@@ -62,12 +62,12 @@ And the HandyBoard SBC was mounted on a metal platform inside of the can and abo
 <img src="/Images/IMG_5038.JPG" alt="" style="width:75%; height:auto;">
 </div>
 
-<div style="text-align:center">
+<div style="text-align:center">	
 <img src="/Images/IMG_5055.JPG" alt="" style="width:75%; height:auto;">
 </div>
 
-Everything was controlled by the 6811-based HandyBoard SBC and its associated [simple controller program](/Src/Robotic_Surveillance_Garbage_Can_Controller.ic) written in '[KISS Interactive C](https://en.wikipedia.org/wiki/Interactive_C)' (IC4). We programmed the HandyBoard so that the light sensors would rotate the can around in a circle while the sonar device would be used to “beep” at people if they came too close. 
+Everything was controlled by the 6811-based HandyBoard SBC and its associated [simple controller program](/Src/Robotic_Surveillance_Garbage_Can_Controller.ic) written in '[KISS Interactive C](https://en.wikipedia.org/wiki/Interactive_C)' (IC4). The HandyBoard was programmed so that the light sensors would rotate the can around in a circle while the sonar device would be used to “beep” at people if they came too close. The switch determined if the can's top was in the opened or closed position.
 
 <div style="text-align:center">
-<img src="/Images/IMG_5007.JPG" alt="" style="width:75%; height:auto;">
+<img src="/Images/IMG_5064.JPG" alt="" style="width:75%; height:auto;">
 </div>
