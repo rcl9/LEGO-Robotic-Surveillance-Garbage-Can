@@ -4,7 +4,7 @@ This repo documents the evolution and development of a flip-up 'Surveillance Gar
 While this does not fall into my "1970s and 1980s retro-computing" camp it is getting there in terms of its age and antiquity given its 2000-era HandyBoard SBC.
 
 <div style="text-align:center">
-<img src="/Images/IMG_5064.JPG" alt="" style="width:75%; height:auto;">
+<img src="/Images/IMG_5064.JPG" alt="" style="width:auto; height:75%;">
 </div>
 
 ## The Premise for the Build
@@ -17,6 +17,8 @@ The ultimate goal was to transform an ordinary $8 flip-top garbage can into a fu
 <img src="/Images/IMG_4867.JPG" alt="" style="width:40%; height:auto;">    
 <img src="/Images/IMG_5065.JPG" alt="" style="width:40%; height:auto;">
 </div>
+
+## Naming the Project
 
 The names which were considered for the project were:
 
@@ -64,7 +66,7 @@ And the HandyBoard SBC was mounted on a metal platform inside of the can and abo
 <img src="/Images/IMG_5055.JPG" alt="" style="width:75%; height:auto;">
 </div>
 
-Everything was controlled by the 6811-based HandyBoard SBC and its associated [simple controller program](/src/Robotic_Surveillance_Garbage_Can_Controller.ic) written in '[KISS Interactive C](https://en.wikipedia.org/wiki/Interactive_C)' (IC4). We programmed the HandyBoard so that the light sensors would rotate the can around in a circle while the sonar device would be used to “beep” at people if they came too close. 
+Everything was controlled by the 6811-based HandyBoard SBC and its associated [simple controller program](/Src/Robotic_Surveillance_Garbage_Can_Controller.ic) written in '[KISS Interactive C](https://en.wikipedia.org/wiki/Interactive_C)' (IC4). We programmed the HandyBoard so that the light sensors would rotate the can around in a circle while the sonar device would be used to “beep” at people if they came too close. 
 
 <div style="text-align:center">
 <img src="/Images/IMG_5007.JPG" alt="" style="width:75%; height:auto;">
